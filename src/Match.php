@@ -22,6 +22,10 @@ final class Match
      * @var Highlight|null
      */
     private $highlight;
+    /**
+     * @var float|null
+     */
+    private $score;
 
     public function __construct(
         LazyModelFactory $lazyModelFactory,
