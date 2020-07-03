@@ -42,7 +42,9 @@ final class Match
     public function model(): ?Model
     {
         $documentId = $this->document()->getId();
-        return $this->lazyModelFactory->makeById($documentId);
+        $model = $this->lazyModelFactory->makeById($documentId);
+        $model->score = $this->score;
+        return $model;
     }
 
     public function document(): Document
