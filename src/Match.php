@@ -43,7 +43,7 @@ final class Match
     {
         $documentId = $this->document()->getId();
         $model = $this->lazyModelFactory->makeById($documentId);
-        $model->score = $this->score;
+        if($model) $model->score = $this->score;
         return $model;
     }
 
